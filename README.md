@@ -40,7 +40,7 @@ Platform ERP được áp dụng vào học phần Thực tập doanh nghiệp d
 
 #### 4.1.1. Tải project.
 ```
-git clone https://githcom/FIT-DNU/Business-Internship.gitub.
+git clone [https://githcom/FIT-DNU/Business-Internship.gitub.](https://github.com/khuong-d4ng/TTDN-16-02-N8.git)
 ```
 #### 4.1.2. Cài đặt các thư viện cần thiết
 Người sử dụng thực thi các lệnh sau đề cài đặt các thư viện cần thiết
