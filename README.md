@@ -36,18 +36,11 @@ Platform ERP được áp dụng vào học phần Thực tập doanh nghiệp d
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 </div>
 
-## 🚀 3. Các project đã thực hiện dựa trên Platform
-
-Một số project sinh viên đã thực hiện:
-- #### [Khoá 15](./docs/projects/K15/README.md)
-- #### [Khoá 16]() (Coming soon)
-## ⚙️ 4. Cài đặt
-
 ### 4.1. Cài đặt công cụ, môi trường và các thư viện cần thiết
 
 #### 4.1.1. Tải project.
 ```
-git clone https://github.com/FIT-DNU/Business-Internship.git
+git clone https://githcom/FIT-DNU/Business-Internship.gitub.
 ```
 #### 4.1.2. Cài đặt các thư viện cần thiết
 Người sử dụng thực thi các lệnh sau đề cài đặt các thư viện cần thiết
