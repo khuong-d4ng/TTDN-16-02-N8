@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_ho_so_cong_viec_form" model="ir.ui.view">
+            <field name="name">ho_so_cong_viec_form</field>
+            <field name="model">ho_so_cong_viec</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="trang_thai" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Mã công việc..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="ten_cong_viec"/>
+                                <field name="nguoi_giao"/>
+                                <field name="nguoi_thuc_hien" widget="many2many_tags"/>
+                                <field name="nguoi_phoi_hop" widget="many2many_tags"/>
+                                <field name="muc_do_uu_tien"/>
+                            </group>
+                            <group>
+                                <field name="ngay_giao"/>
+                                <field name="han_hoan_thanh"/>
+                                <field name="ngay_hoan_thanh"/>
+                                <field name="tien_do"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Mô tả công việc">
+                                <field name="mo_ta"/>
+                            </page>
+                            <page string="Kết quả và nhận xét">
+                                <group>
+                                    <field name="ket_qua"/>
+                                    <field name="nhan_xet"/>
+                                </group>
+                            </page>
+                            <page string="Văn bản liên quan">
+                                <field name="van_ban_lien_quan_ids"/>
+                            </page>
+                        </notebook>
+                        <group string="File đính kèm">
+                            <field name="file_dinh_kem" filename="file_name"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_ho_so_cong_viec_tree" model="ir.ui.view">
+            <field name="name">ho_so_cong_viec_tree</field>
+            <field name="model">ho_so_cong_viec</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="ten_cong_viec"/>
+                    <field name="nguoi_giao"/>
+                    <field name="nguoi_thuc_hien"/>
+                    <field name="ngay_giao"/>
+                    <field name="han_hoan_thanh"/>
+                    <field name="muc_do_uu_tien"/>
+                    <field name="trang_thai"/>
+                    <field name="tien_do"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_ho_so_cong_viec_search" model="ir.ui.view">
+            <field name="name">ho_so_cong_viec_search</field>
+            <field name="model">ho_so_cong_viec</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ten_cong_viec"/>
+                    <field name="nguoi_giao"/>
+                    <field name="nguoi_thuc_hien"/>
+                    <separator/>
+                    <filter string="Mới" name="new" domain="[('trang_thai', '=', 'moi')]"/>
+                    <filter string="Đang thực hiện" name="in_progress" domain="[('trang_thai', '=', 'dang_thuc_hien')]"/>
+                    <filter string="Hoàn thành" name="done" domain="[('trang_thai', '=', 'hoan_thanh')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Trạng thái" name="group_by_state" context="{'group_by': 'trang_thai'}"/>
+                        <filter string="Mức độ ưu tiên" name="group_by_priority" context="{'group_by': 'muc_do_uu_tien'}"/>
+                        <filter string="Người giao" name="group_by_assigner" context="{'group_by': 'nguoi_giao'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_ho_so_cong_viec" model="ir.actions.act_window">
+            <field name="name">Hồ sơ công việc</field>
+            <field name="res_model">ho_so_cong_viec</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_ho_so_cong_viec_search"/>
+        </record>
+
+        
+    </data>
+</odoo>

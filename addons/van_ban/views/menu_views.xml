@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_van_ban_root"
+              name="Quản lý văn bản"
+              sequence="10"/>
+
+    <!-- Sub Menus -->
+    <menuitem id="menu_van_ban_den"
+              name="Văn bản đến"
+              parent="menu_van_ban_root"
+              action="action_van_ban_den"
+              sequence="1"/>
+
+    <menuitem id="menu_van_ban_di"
+              name="Văn bản đi"
+              parent="menu_van_ban_root"
+              action="action_van_ban_di"
+              sequence="2"/>   
+
+    <menuitem id="menu_ho_so"
+              name="Hồ sơ văn bản"
+              parent="menu_van_ban_root"
+              action="action_ho_so"
+              sequence="3"/>
+
+    <menuitem id="menu_ho_so_cong_viec"
+              name="Hồ sơ công việc"
+              parent="menu_van_ban_root"
+              action="action_ho_so_cong_viec"
+              sequence="4"/>
+
+    <!-- Hệ thống - Danh mục -->
+    <menuitem id="menu_danh_muc"
+              name="Hệ thống - Danh mục"
+              parent="menu_van_ban_root"
+              sequence="100"/>
+
+    <menuitem id="menu_don_vi"
+              name="Đơn vị"
+              parent="menu_danh_muc"
+              action="action_don_vi"
+              sequence="1"/>
+
+    <menuitem id="menu_chuc_vu"
+              name="Chức vụ"
+              parent="menu_danh_muc"
+              action="action_chuc_vu"
+              sequence="2"/>
+
+    <menuitem id="menu_loai_van_ban"
+              name="Loại văn bản"
+              parent="menu_danh_muc"
+              action="action_loai_van_ban"
+              sequence="3"/>
+
+    <menuitem id="menu_do_mat"
+              name="Độ mật"
+              parent="menu_danh_muc"
+              action="action_do_mat"
+              sequence="4"/>
+    
+    <menuitem id="menu_do_khan"
+              name="Độ khẩn"
+              parent="menu_danh_muc"
+              action="action_do_khan"
+              sequence="5"/>
+</odoo>
