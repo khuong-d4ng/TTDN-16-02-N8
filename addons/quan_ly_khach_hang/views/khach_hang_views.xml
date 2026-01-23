@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_khach_hang_tree" model="ir.ui.view">
+        <field name="name">Khách hàng - Danh sách</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="arch" type="xml">
+            <tree string="Khách hàng">
+                <field name="ma_khach_hang"/>
+                <field name="ten"/>
+                <field name="ten_doanh_nghiep"/>
+                <field name="email"/>
+                <field name="loai_khach_hang"/>
+                <field name="trang_thai_khach_hang"/>
+                <field name="tong_don_cho_xu_ly"/>
+                <field name="tong_don_da_giao"/>
+                <field name="tong_don_da_huy"/>
+                <field name="tong_giao_dich"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_khach_hang_form" model="ir.ui.view">
+        <field name="name">Khách hàng - Form</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="arch" type="xml">
+            <form string="Khách hàng">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ma_khach_hang"/>
+                            <field name="ten"/>
+                            <field name="ten_doanh_nghiep"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="loai_khach_hang"/>
+                            <field name="trang_thai_khach_hang"/>
+                        </group>
+                    </group>
+
+                    <group string="Tổng hợp đơn hàng">
+                        <group>
+                            <field name="tong_don_cho_xu_ly" readonly="1"/>
+                            <field name="tong_don_da_giao" readonly="1"/>
+                            <field name="tong_don_da_huy" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="tong_giao_dich" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Đơn hàng">
+                            <field name="don_hang_ids">
+                                <tree string="Đơn hàng">
+                                    <field name="ten_don_hang"/>
+                                    <field name="don_gia"/>
+                                    <field name="trang_thai"/>
+                                    <field name="ngay_tao_don"/>
+                                    <field name="han_ban_giao"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_khach_hang" model="ir.actions.act_window">
+        <field name="name">Quản lý khách hàng</field>
+        <field name="res_model">quan_ly_khach_hang.khach_hang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_don_hang_tree" model="ir.ui.view">
+        <field name="name">Đơn hàng - Danh sách</field>
+        <field name="model">quan_ly_khach_hang.don_hang</field>
+        <field name="arch" type="xml">
+            <tree string="Đơn hàng">
+                <field name="ten_don_hang"/>
+                <field name="ten_khach_hang"/>
+                <field name="ma_khach_hang"/>
+                <field name="ten_doanh_nghiep"/>
+                <field name="email"/>
+                <field name="don_gia"/>
+                <field name="trang_thai"/>
+                <field name="ngay_tao_don"/>
+                <field name="han_ban_giao"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_don_hang_form" model="ir.ui.view">
+        <field name="name">Đơn hàng - Form</field>
+        <field name="model">quan_ly_khach_hang.don_hang</field>
+        <field name="arch" type="xml">
+            <form string="Đơn hàng">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ten_don_hang"/>
+                            <field name="khach_hang_id"/>
+                        </group>
+                        <group string="Thông tin khách hàng">
+                            <field name="ma_khach_hang" readonly="1"/>
+                            <field name="ten_khach_hang" readonly="1"/>
+                            <field name="ten_doanh_nghiep" readonly="1"/>
+                            <field name="email" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group>
+                            <field name="don_gia"/>
+                            <field name="trang_thai"/>
+                        </group>
+                        <group>
+                            <field name="ngay_tao_don"/>
+                            <field name="han_ban_giao"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_don_hang" model="ir.actions.act_window">
+        <field name="name">Quản lí đơn hàng</field>
+        <field name="res_model">quan_ly_khach_hang.don_hang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_khach_hang_user,khach_hang user,model_quan_ly_khach_hang_khach_hang,quan_ly_khach_hang.group_quan_ly_khach_hang_user,1,1,1,1
+access_khach_hang_manager,khach_hang manager,model_quan_ly_khach_hang_khach_hang,quan_ly_khach_hang.group_quan_ly_khach_hang_manager,1,1,1,1
+access_don_hang_user,don_hang user,model_quan_ly_khach_hang_don_hang,quan_ly_khach_hang.group_quan_ly_khach_hang_user,1,1,1,1
+access_don_hang_manager,don_hang manager,model_quan_ly_khach_hang_don_hang,quan_ly_khach_hang.group_quan_ly_khach_hang_manager,1,1,1,1
