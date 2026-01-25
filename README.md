@@ -157,8 +157,9 @@ Dashboard sử dụng Kanban board với các tính năng:
 | **Phiên bản** | 0.1 |
 | **Phụ thuộc** | `base`, `quan_ly_khach_hang` |
 
-**Tác giả:**  [:octocat:github](https://github.com/tranhuan123/TTDN-15-01-N1)
-Các thông tin chi tiết về Module Quản lý văn bản (van_ban) vui lòng xem lại  [:octocat:github](https://github.com/tranhuan123/TTDN-15-01-N1)
+**Tác giả:** [tranhuan123/TTDN-15-01-N1](https://github.com/tranhuan123/TTDN-15-01-N1)
+
+Các thông tin chi tiết về Module Quản lý văn bản (van_ban) vui lòng xem tại [tranhuan123/TTDN-15-01-N1](https://github.com/tranhuan123/TTDN-15-01-N1)
 
 **Cấu trúc thư mục sau cải tiến:**
 ```
