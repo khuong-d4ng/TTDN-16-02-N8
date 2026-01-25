@@ -106,7 +106,7 @@ quan_ly_khach_hang/
 
 #### 2.4.1. Dashboard Khách Hàng
 
-<img src="images/dashboard-khach-hang.png" alt="dashboard-don-hang"/>
+<img src="docs/images/dashboard-khach-hang.png" alt="dashboard-don-hang"/>
 
 > [!NOTE]
 > Các computed fields được đánh dấu `store=True`, nghĩa là giá trị sẽ được lưu vào database và tự động cập nhật khi các trường phụ thuộc thay đổi.
@@ -124,7 +124,7 @@ quan_ly_khach_hang/
 
 #### 2.4.2. Dashboard Đơn Hàng
 
-<img src="images/dashboard-don-hang.png" alt="dashboard-don-hang"/>
+<img src="docs/images/dashboard-don-hang.png" alt="dashboard-don-hang"/>
 
 Dashboard cung cấp các view phân tích:
 
@@ -156,6 +156,9 @@ Dashboard sử dụng Kanban board với các tính năng:
 | **Tên hiển thị** | Quản lý văn bản |
 | **Phiên bản** | 0.1 |
 | **Phụ thuộc** | `base`, `quan_ly_khach_hang` |
+
+**Tác giả:**  [:octocat:github](https://github.com/tranhuan123/TTDN-15-01-N1)
+Các thông tin chi tiết về Module Quản lý văn bản (van_ban) vui lòng xem lại  [:octocat:github](https://github.com/tranhuan123/TTDN-15-01-N1)
 
 **Cấu trúc thư mục sau cải tiến:**
 ```
@@ -283,7 +286,7 @@ Bổ sung các bộ lọc và nhóm mới cho Search View:
 
 #### 3.7.1. Dashboard Văn Bản Đến
 
-<img src="images/dashboard-van-ban.png" alt="dashboard-don-hang"/>
+<img src="docs/images/dashboard-van-ban.png" alt="dashboard-don-hang"/>
 
 Dashboard sử dụng Kanban board với các tính năng nổi bật:
 
