@@ -34,7 +34,8 @@
 ### Cơ sở dữ liệu
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 </div>
----
+
+
 
 ## 1. Tổng Quan Hệ Thống
 
@@ -121,9 +122,6 @@ quan_ly_khach_hang/
 #### 2.4.1. Dashboard Khách Hàng
 
 <img src="docs/images/dashboard-khach-hang.png" alt="dashboard-don-hang"/>
-
-> [!NOTE]
-> Các computed fields được đánh dấu `store=True`, nghĩa là giá trị sẽ được lưu vào database và tự động cập nhật khi các trường phụ thuộc thay đổi.
 
 ---
 
