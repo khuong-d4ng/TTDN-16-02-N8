@@ -189,7 +189,7 @@ van_ban/
 
 ---
 
-### 3.2. Các Cải Tiến Chính
+### 3.2. Các Cải Tiến Chính mà nhóm đã thực hiện
 
 Nhóm đã thực hiện các cải tiến sau đây cho module `van_ban`:
 
@@ -637,7 +637,7 @@ python3 odoo-bin.py -c odoo.conf -u all
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
 
 ## License
-© Nhóm 8 CNTT 16-02
+© Nhóm 8 CNTT 16-02 <br>
 © 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
 > [!IMPORTANT]
