@@ -374,8 +374,10 @@ graph TB
     end
     
     VBD -->|Many2one| KH
+    VBI -->|Many2one| KH
     KHVB -.->|_inherit| KH
     KHVB -->|One2many| VBD
+    KHVB -->|One2many| VBI
 ```
 
 ### 4.2. Quy Trình Nghiệp Vụ
@@ -507,6 +509,7 @@ File [views/khach_hang_views.xml](file:///wsl.localhost/Ubuntu-22.04/home/khuong
 erDiagram
     KHACH_HANG ||--o{ DON_HANG : "có nhiều"
     KHACH_HANG ||--o{ VAN_BAN_DEN : "nhận từ"
+    KHACH_HANG ||--o{ VAN_BAN_DI : "gửi tới"
     
     HO_SO_VAN_BAN }o--o{ VAN_BAN_DEN : "chứa"
     HO_SO_VAN_BAN }o--o{ VAN_BAN_DI : "chứa"
@@ -550,6 +553,7 @@ erDiagram
     
     VAN_BAN_DI {
         int id PK
+        int khach_hang_id FK
         string name
         text trich_yeu
         text noi_nhan
@@ -591,7 +595,9 @@ erDiagram
 | `don_hang_ids` | KhachHang | DonHang | One2many | Danh sách đơn hàng của khách |
 | `khach_hang_id` | DonHang | KhachHang | Many2one | Đơn hàng thuộc về khách |
 | `van_ban_den_ids` | KhachHang | VanBanDen | One2many | Văn bản đến từ khách |
-| `khach_hang_id` | VanBanDen | KhachHang | Many2one | Văn bản thuộc về khách |
+| `khach_hang_id` | VanBanDen | KhachHang | Many2one | Văn bản đến thuộc về khách |
+| `van_ban_di_ids` | KhachHang | VanBanDi | One2many | Văn bản đi gửi tới khách |
+| `khach_hang_id` | VanBanDi | KhachHang | Many2one | Văn bản đi thuộc về khách |
 | `van_ban_den_ids` | HoSoVanBan | VanBanDen | Many2many | Văn bản đến trong hồ sơ |
 | `van_ban_di_ids` | HoSoVanBan | VanBanDi | Many2many | Văn bản đi trong hồ sơ |
 | `van_ban_lien_quan_ids` | HoSoCongViec | VanBanDen | Many2many | Văn bản liên quan công việc |
