@@ -106,3 +106,4 @@ class KhachHang(models.Model):
             record.tong_don_da_giao = len(don_giao)
             record.tong_don_da_huy = len(don_huy)
             record.tong_giao_dich = sum(don_giao.mapped('don_gia'))
+

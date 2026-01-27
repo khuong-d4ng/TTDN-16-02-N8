@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'quan_ly_khach_hang'],
 
     # always loaded
     'data': [
@@ -31,6 +31,7 @@
         'views/ho_so_van_ban_views.xml',
         'views/ho_so_cong_viec_views.xml',
         'views/danh_muc_views.xml',
+        'views/khach_hang_views.xml',
         'views/menu_views.xml',
     ],
     # only loaded in demonstration mode

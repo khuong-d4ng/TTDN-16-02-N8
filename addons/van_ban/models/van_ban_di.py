@@ -8,6 +8,16 @@ class VanBanDi(models.Model):
     
     company_id = fields.Many2one('res.company', string='Công ty', 
         default=lambda self: self.env.company)
+
+    phan_loai = fields.Selection([
+        ('noi_bo', 'Nội bộ'),
+        ('khach_hang', 'Khách hàng'),
+    ], string='Phân loại', default='noi_bo')
+    
+    khach_hang_id = fields.Many2one(
+        'quan_ly_khach_hang.khach_hang',
+        string='Khách hàng'
+    )
     
     name = fields.Char(string='Số văn bản', required=True)
     trich_yeu = fields.Text(string='Trích yếu', required=True)

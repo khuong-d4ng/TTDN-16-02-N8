@@ -4,15 +4,30 @@
               name="Quản lý khách hàng"
               sequence="10"/>
 
+    <!-- Dashboard Menu - First -->
+    <menuitem id="menu_khach_hang_dashboard"
+              name="Dashboard khách hàng"
+              parent="menu_quan_ly_khach_hang_root"
+              action="action_khach_hang_dashboard"
+              sequence="0"/>
+
+    <menuitem id="menu_don_hang_dashboard"
+              name="Dashboard đơn hàng"
+              parent="menu_quan_ly_khach_hang_root"
+              action="action_don_hang_dashboard"
+              sequence="1"/>
+
     <menuitem id="menu_quan_ly_khach_hang"
               name="Quản lý khách hàng"
               parent="menu_quan_ly_khach_hang_root"
               action="action_khach_hang"
-              sequence="1"/>
+              sequence="2"/>
 
     <menuitem id="menu_quan_ly_don_hang"
               name="Quản lí đơn hàng"
               parent="menu_quan_ly_khach_hang_root"
               action="action_don_hang"
-              sequence="2"/>
+              sequence="3"/>
 </odoo>
+
+

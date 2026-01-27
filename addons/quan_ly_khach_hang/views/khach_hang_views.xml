@@ -67,9 +67,71 @@
         </field>
     </record>
 
+    <!-- Graph View for Dashboard -->
+    <record id="view_khach_hang_graph" model="ir.ui.view">
+        <field name="name">Khách hàng - Biểu đồ</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="arch" type="xml">
+            <graph string="Thống kê khách hàng" type="bar">
+                <field name="ten" type="row"/>
+                <field name="tong_giao_dich" type="measure"/>
+                <field name="tong_don_da_giao" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot View for Dashboard -->
+    <record id="view_khach_hang_pivot" model="ir.ui.view">
+        <field name="name">Khách hàng - Pivot</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="arch" type="xml">
+            <pivot string="Phân tích khách hàng">
+                <field name="loai_khach_hang" type="row"/>
+                <field name="trang_thai_khach_hang" type="col"/>
+                <field name="tong_giao_dich" type="measure"/>
+                <field name="tong_don_da_giao" type="measure"/>
+                <field name="tong_don_cho_xu_ly" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_khach_hang_search" model="ir.ui.view">
+        <field name="name">Khách hàng - Tìm kiếm</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ten"/>
+                <field name="ma_khach_hang"/>
+                <field name="ten_doanh_nghiep"/>
+                <field name="email"/>
+                <separator/>
+                <filter string="Khách mới" name="khach_moi" domain="[('trang_thai_khach_hang', '=', 'moi')]"/>
+                <filter string="Khách cũ" name="khach_cu" domain="[('trang_thai_khach_hang', '=', 'cu')]"/>
+                <separator/>
+                <filter string="Cá nhân" name="ca_nhan" domain="[('loai_khach_hang', '=', 'ca_nhan')]"/>
+                <filter string="Doanh nghiệp" name="doanh_nghiep" domain="[('loai_khach_hang', '=', 'doanh_nghiep')]"/>
+                <group expand="0" string="Nhóm theo">
+                    <filter string="Loại khách hàng" name="group_loai" context="{'group_by': 'loai_khach_hang'}"/>
+                    <filter string="Trạng thái" name="group_trang_thai" context="{'group_by': 'trang_thai_khach_hang'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="action_khach_hang" model="ir.actions.act_window">
         <field name="name">Quản lý khách hàng</field>
         <field name="res_model">quan_ly_khach_hang.khach_hang</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_khach_hang_search"/>
+    </record>
+
+    <!-- Dashboard Action -->
+    <record id="action_khach_hang_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard khách hàng</field>
+        <field name="res_model">quan_ly_khach_hang.khach_hang</field>
+        <field name="view_mode">graph,pivot,tree,form</field>
+        <field name="search_view_id" ref="view_khach_hang_search"/>
     </record>
 </odoo>
+

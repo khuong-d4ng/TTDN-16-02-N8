@@ -8,6 +8,10 @@
                 <form>
                     <sheet>
                         <div class="oe_read_only" style="font-size:25px">Văn bản đi</div>
+                        <group col="2" string="Phân loại">
+                            <field name="phan_loai" widget="radio"/>
+                            <field name="khach_hang_id" attrs="{'invisible': [('phan_loai', '!=', 'khach_hang')], 'required': [('phan_loai', '=', 'khach_hang')]}"/>
+                        </group>
                         <group col="4" string="Thông tin chung">
                             <field name="name"/>
                             <field name="trich_yeu"/>
@@ -35,6 +39,8 @@
             <field name="model">van_ban_di</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="phan_loai"/>
+                    <field name="khach_hang_id"/>
                     <field name="name"/>
                     <field name="trich_yeu"/>
                     <field name="ngay_van_ban"/>

@@ -10,6 +10,16 @@ class VanBanDen(models.Model):
     company_id = fields.Many2one('res.company', string='Công ty', 
         default=lambda self: self.env.company)
 
+    phan_loai = fields.Selection([
+        ('noi_bo', 'Nội bộ'),
+        ('khach_hang', 'Khách hàng'),
+    ], string='Phân loại', default='noi_bo')
+    
+    khach_hang_id = fields.Many2one(
+        'quan_ly_khach_hang.khach_hang',
+        string='Khách hàng'
+    )
+
     name = fields.Char(string='Số văn bản', required=True)
     trich_yeu = fields.Text(string='Trích yếu', required=True)
     ngay_van_ban = fields.Date(string='Ngày văn bản', default=fields.Date.today)
@@ -40,6 +50,12 @@ class VanBanDen(models.Model):
         ('moi', 'Mới'),
         ('dang_xu_ly', 'Đang xử lý'),
         ('da_xu_ly', 'Đã xử lý'),
-    ], string='Trạng thái', default='moi')
+    ], string='Trạng thái', default='moi', group_expand='_expand_trang_thai')
     file_dinh_kem = fields.Binary(string='File đính kèm')
-    file_name = fields.Char(string='Tên file') 
+    file_name = fields.Char(string='Tên file')
+
+    @api.model
+    def _expand_trang_thai(self, states, domain, order):
+        """Luôn hiển thị tất cả các cột trạng thái trong kanban view"""
+        return [key for key, val in type(self).trang_thai.selection]
+ 

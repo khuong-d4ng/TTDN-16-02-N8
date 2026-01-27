@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit and extend khach_hang form view to add van_ban fields -->
+    <record id="view_khach_hang_form_inherit_van_ban" model="ir.ui.view">
+        <field name="name">Khách hàng - Form - Văn bản</field>
+        <field name="model">quan_ly_khach_hang.khach_hang</field>
+        <field name="inherit_id" ref="quan_ly_khach_hang.view_khach_hang_form"/>
+        <field name="arch" type="xml">
+            <!-- Add Tổng hợp văn bản group after the group containing tong_giao_dich -->
+            <xpath expr="//field[@name='tong_giao_dich']/.." position="after">
+                <group string="Tổng hợp văn bản">
+                    <group>
+                        <field name="tong_van_ban_moi" readonly="1"/>
+                        <field name="tong_van_ban_dang_xu_ly" readonly="1"/>
+                        <field name="tong_van_ban_da_xu_ly" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+            <!-- Add Văn bản đến tab after the page containing don_hang_ids -->
+            <xpath expr="//field[@name='don_hang_ids']/.." position="after">
+                <page string="Văn bản đến">
+                    <field name="van_ban_den_ids">
+                        <tree string="Văn bản đến">
+                            <field name="name"/>
+                            <field name="trich_yeu"/>
+                            <field name="ngay_van_ban"/>
+                            <field name="loai_van_ban"/>
+                            <field name="trang_thai"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

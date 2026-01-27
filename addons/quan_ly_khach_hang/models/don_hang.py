@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class DonHang(models.Model):
@@ -41,13 +41,19 @@ class DonHang(models.Model):
 
     don_gia = fields.Float(string='Đơn giá', digits=(16, 2), required=True)
     trang_thai = fields.Selection([
-        ('moi_cho_xu_ly', 'Mới (chờ xử lí)'),
+        ('moi_cho_xu_ly', 'Mới'),
         ('da_giao', 'Đã giao'),
         ('da_huy', 'Đã hủy'),
-    ], string='Trạng thái', default='moi_cho_xu_ly', required=True)
+    ], string='Trạng thái', default='moi_cho_xu_ly', required=True, group_expand='_expand_trang_thai')
     ngay_tao_don = fields.Date(
         string='Ngày tạo đơn',
         default=fields.Date.context_today,
         required=True
     )
     han_ban_giao = fields.Date(string='Hạn bàn giao')
+
+    @api.model
+    def _expand_trang_thai(self, states, domain, order):
+        """Luôn hiển thị tất cả các cột trạng thái trong kanban view"""
+        return [key for key, val in type(self).trang_thai.selection]
+
