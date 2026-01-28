@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 
 class KhachHangVanBan(models.Model):
-    """Mở rộng model KhachHang để thêm liên kết với văn bản đến"""
+    """Mở rộng model KhachHang để thêm liên kết với văn bản đến và văn bản đi"""
     _inherit = 'quan_ly_khach_hang.khach_hang'
 
     # Văn bản đến liên quan
@@ -11,6 +11,13 @@ class KhachHangVanBan(models.Model):
         'van_ban_den',
         'khach_hang_id',
         string='Văn bản đến'
+    )
+
+    # Văn bản đi liên quan
+    van_ban_di_ids = fields.One2many(
+        'van_ban_di',
+        'khach_hang_id',
+        string='Văn bản đi'
     )
 
     tong_van_ban_moi = fields.Integer(

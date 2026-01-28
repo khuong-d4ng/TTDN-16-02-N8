@@ -29,6 +29,18 @@
                         </tree>
                     </field>
                 </page>
+                <page string="Văn bản đi">
+                    <field name="van_ban_di_ids">
+                        <tree string="Văn bản đi">
+                            <field name="name"/>
+                            <field name="trich_yeu"/>
+                            <field name="ngay_van_ban"/>
+                            <field name="noi_nhan"/>
+                            <field name="loai_van_ban"/>
+                            <field name="trang_thai"/>
+                        </tree>
+                    </field>
+                </page>
             </xpath>
         </field>
     </record>
