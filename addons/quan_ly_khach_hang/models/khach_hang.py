@@ -21,6 +21,13 @@ class KhachHang(models.Model):
         ('moi', 'Mới'),
     ], string='Trạng thái khách hàng', default='moi', required=True)
 
+    # Liên kết với nhân viên phụ trách
+    nhan_vien_phu_trach_id = fields.Many2one(
+        'nhan_vien',
+        string='Nhân viên phụ trách',
+        help='Nhân viên phụ trách quản lý khách hàng này'
+    )
+
     don_hang_ids = fields.One2many(
         'quan_ly_khach_hang.don_hang',
         'khach_hang_id',

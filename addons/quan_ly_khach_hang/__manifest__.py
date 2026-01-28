@@ -10,7 +10,7 @@
     'website': 'http://www.yourcompany.com',
     'category': 'Sales',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['base', 'nhan_su'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',

@@ -78,11 +78,68 @@
             </field>
         </record>
 
+        <!-- Kanban View for Dashboard -->
+        <record id="view_van_ban_di_kanban" model="ir.ui.view">
+            <field name="name">van_ban_di.kanban</field>
+            <field name="model">van_ban_di</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="trang_thai" class="o_kanban_small_column">
+                    <field name="name"/>
+                    <field name="trich_yeu"/>
+                    <field name="ngay_gui"/>
+                    <field name="noi_nhan"/>
+                    <field name="do_khan"/>
+                    <field name="trang_thai"/>
+                    <field name="phan_loai"/>
+                    <field name="khach_hang_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_kanban_content">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name"/>
+                                            </strong>
+                                        </div>
+                                        <span t-if="record.do_khan.raw_value == 'khan'" class="badge badge-warning">Khẩn</span>
+                                        <span t-if="record.do_khan.raw_value == 'hoa_toc'" class="badge badge-danger">Hỏa tốc</span>
+                                    </div>
+                                    <div class="o_kanban_record_body">
+                                        <field name="trich_yeu"/>
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <span><field name="ngay_gui"/></span>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <span t-if="record.phan_loai.raw_value == 'khach_hang'" class="badge badge-info">
+                                                <field name="khach_hang_id"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record id="action_van_ban_di" model="ir.actions.act_window">
             <field name="name">Văn bản đi</field>
             <field name="res_model">van_ban_di</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="van_ban_di_search"/>
+        </record>
+
+        <!-- Dashboard Action -->
+        <record id="action_van_ban_di_dashboard" model="ir.actions.act_window">
+            <field name="name">Dashboard văn bản đi</field>
+            <field name="res_model">van_ban_di</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="van_ban_di_search"/>
+            <field name="context">{'search_default_group_by_trang_thai': 1}</field>
         </record>
     </data>
 </odoo>
