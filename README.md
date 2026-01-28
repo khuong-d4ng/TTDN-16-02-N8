@@ -44,7 +44,7 @@ Hệ thống bao gồm hai module Odoo 15 tùy chỉnh hoạt động phối h�
 | Module | Mô Tả | Phụ Thuộc | Ghi chú/Tác giả |
 |--------|-------|-----------|---------|
 | `quan_ly_khach_hang` | Quản lý thông tin khách hàng và đơn hàng | `base` ||
-| `van_ban` | Quản lý văn bản đến/đi, hồ sơ công việc | `base`, `quan_ly_khach_hang` |[🔗](https://github.com/tranhuan123/TTDN-15-01-N1)|
+| `van_ban` | Quản lý văn bản đến/đi, hồ sơ công việc | `base`, `quan_ly_khach_hang` |[🔗](https://github.com/tranhuan123/TTDN-15-01-N1)tranhuan123/TTDN-15-01-N1|
 
 > [!IMPORTANT]
 > Module `van_ban` phụ thuộc vào `quan_ly_khach_hang`, nghĩa là `quan_ly_khach_hang` phải được cài đặt trước khi cài đặt `van_ban`.
