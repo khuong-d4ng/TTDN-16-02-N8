@@ -22,7 +22,7 @@
 ---
 ## Poster
 <div align="center">
-<img src="docs/images/Poster-TTDN-16-02-N8.png" alt="poster"/>
+<img src="docs/images/Poster-TTDN-16-02-N8.PNG" alt="poster"/>
 </div>
 
 ---
