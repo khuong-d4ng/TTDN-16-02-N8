@@ -19,6 +19,11 @@
 
 </div>
 
+---
+## Poster
+<div align="center">
+<img src="docs/images/Poster-TTDN-16-02-N8.pdf" alt="poster"/>
+</div>
 
 ---
 ## Các công nghệ được sử dụng
